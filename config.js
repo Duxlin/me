@@ -1,6 +1,6 @@
 /**
-   * Create By THE JO BOT
-   * Base By Dika
+   * Create By Dux
+   * Base By Quadhir
 */
 
 const fs = require('fs')
@@ -47,6 +47,25 @@ global.limitawal = {
 }
 global.thumb = fs.readFileSync('./lib/jo.jpg')
 global.visoka = { url: 'https://telegra.ph/file/15209657f9d4f59c7ca1e.mp4' }
+const fs = require('fs');
+const { Sequelize } = require('sequelize');
+if (fs.existsSync('config.env')) require('dotenv').config({ path: './config.env' });
+function convertToBool(text, fault = 'true') {
+    return text === fault ? true : false;
+}
+DATABASE_URL = process.env.DATABASE_URL === undefined ? './bot.db' : process.env.DATABASE_URL;
+DEBUG = process.env.DEBUG === undefined ? false : convertToBool(process.env.DEBUG);
+module.exports = {
+    READ_COMMAND: convertToBool(process.env.READ_COMMAND) || true,
+    SESSION: process.env.SESSION || '',
+    IMGBB_KEY: ["76a050f031972d9f27e329d767dd988f","deb80cd12ababea1c9b9a8ad6ce3fab2","78c84c62b32a88e86daf87dd509a657a"],
+    RG: process.env.RG || '919074309534-1632403322@g.us',
+    '',
+    MODE: process.env.MODE || 'private',
+    },
+    
+    };
+Footer
 
 let file = require.resolve(__filename)
 fs.watchFile(file, () => {
